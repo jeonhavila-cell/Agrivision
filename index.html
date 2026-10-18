@@ -1,0 +1,375 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Crop AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🌱 SmartCrop AI
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#detect">Detect Crop</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </div>
+
+        <button class="login-btn">
+            Login
+        </button>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                🌾 AI POWERED AGRICULTURE
+            </span>
+
+            <h1>
+                Smart Crop<br>
+                <span>Detection System</span>
+            </h1>
+
+            <p>
+                Identify crops using artificial intelligence
+                and get useful information about their
+                season, water requirements and cultivation.
+            </p>
+
+            <a href="#detect" class="start-btn">
+                Start Detection →
+            </a>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="circle">
+                🌱
+            </div>
+
+            <div class="floating-card card-one">
+                🌾 Rice
+            </div>
+
+            <div class="floating-card card-two">
+                🌽 Maize
+            </div>
+
+            <div class="floating-card card-three">
+                🍅 Tomato
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DETECTION -->
+    <section id="detect" class="detection-section">
+
+        <div class="section-heading">
+
+            <span>AI CROP DETECTION</span>
+
+            <h2>
+                Identify Your Crop
+            </h2>
+
+            <p>
+                Upload an image of your crop to analyze it.
+            </p>
+
+        </div>
+
+
+        <div class="detector">
+
+            <div class="upload-area" id="uploadArea">
+
+                <div class="upload-icon">
+                    📷
+                </div>
+
+                <h3>
+                    Upload Crop Image
+                </h3>
+
+                <p>
+                    JPG, JPEG or PNG
+                </p>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    hidden
+                >
+
+                <button
+                    class="upload-btn"
+                    onclick="document.getElementById('imageInput').click()"
+                >
+                    Choose Image
+                </button>
+
+                <img
+                    id="preview"
+                    alt="Crop Preview"
+                >
+
+            </div>
+
+
+            <div class="detect-controls">
+
+                <button
+                    class="detect-btn"
+                    onclick="detectCrop()"
+                >
+                    🔍 Detect Crop
+                </button>
+
+                <p class="demo-note">
+                    * AI detection will be connected to
+                    the backend model.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div id="result" class="result">
+
+            <div class="result-header">
+
+                <span>DETECTION COMPLETE</span>
+
+                <h2 id="cropName">
+                    🌱 Rice
+                </h2>
+
+            </div>
+
+
+            <div class="result-grid">
+
+                <div class="result-box">
+
+                    <span>Confidence</span>
+
+                    <strong id="confidence">
+                        94%
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>Growing Season</span>
+
+                    <strong id="season">
+                        Kharif
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>Water Requirement</span>
+
+                    <strong id="water">
+                        High
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="description">
+
+                <h3>About This Crop</h3>
+
+                <p id="description">
+                    Rice is an important cereal crop
+                    generally grown in warm and
+                    water-rich conditions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section id="features" class="features-section">
+
+        <div class="section-heading">
+
+            <span>OUR FEATURES</span>
+
+            <h2>
+                Smart Agriculture Tools
+            </h2>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI Detection
+                </h3>
+
+                <p>
+                    Identify crops from images
+                    using an AI-powered system.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🌾
+                </div>
+
+                <h3>
+                    Crop Information
+                </h3>
+
+                <p>
+                    Get information about seasons,
+                    water and cultivation.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Detection Results
+                </h3>
+
+                <p>
+                    View confidence scores and
+                    detailed crop information.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    👨‍🌾
+                </div>
+
+                <h3>
+                    Farmer Friendly
+                </h3>
+
+                <p>
+                    Simple interface designed
+                    for easy agricultural use.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+
+        <div>
+
+            <span>
+                ABOUT SMARTCROP
+            </span>
+
+            <h2>
+                Technology for<br>
+                Better Agriculture
+            </h2>
+
+        </div>
+
+        <p>
+            SmartCrop AI is a smart agriculture platform
+            designed to help farmers identify crops and
+            access useful agricultural information through
+            modern artificial intelligence technology.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            🌱 SmartCrop AI
+        </h3>
+
+        <p>
+            AI-powered agriculture for a smarter future.
+        </p>
+
+        <p class="copyright">
+            © 2026 SmartCrop AI | Hackathon Project
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
